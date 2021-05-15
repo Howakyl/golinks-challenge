@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './Repos.css';
 
 const Repos = () => {
   const [repos, setRepos] = useState([]);
@@ -23,9 +24,11 @@ const Repos = () => {
       {loading && <h2>Loading...</h2>}
 
       {!loading && (
-        <ul>
+        <ul className="repo-list">
           {repos.map((repo) => (
-            <li key={repo.id}>{repo.name}</li>
+            <li key={repo.id} className="repo-list__item">
+              <h3>{repo.name}</h3>
+            </li>
           ))}
         </ul>
       )}
