@@ -5,7 +5,7 @@
     height: 350px;
     flex-direction: column;
     text-align: center;
-    width: 60vw;
+    width: 50vw;
     margin: 0 auto;
     margin-top: 10rem;
     padding: 0;
@@ -13,8 +13,20 @@
 }
 
 .repo-list__item {
-    background-color: #c7c6c6;
-    color: #E20813;
+    display: flex;
+    justify-content: space-between;
+    background-color:  #E20813;
+    color: #f1eded;
     margin-top: 1rem;
+    padding: 20px;
     border-radius: 5px;
+}
+
+.repo-list__item button {
+    background: none;
+    border: none;
+    color: #f1eded;
+    font-size: 40px;
+    font-weight: lighter;
+    cursor: pointer;
 }

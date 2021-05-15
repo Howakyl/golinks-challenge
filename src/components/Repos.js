@@ -28,6 +28,7 @@ const Repos = () => {
           {repos.map((repo) => (
             <li key={repo.id} className="repo-list__item">
               <h3>{repo.name}</h3>
+              <button>+</button>
             </li>
           ))}
         </ul>
