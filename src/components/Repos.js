@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import RepoItem from './RepoItem';
-import './Repos.css';
+import RepoItem from "./RepoItem";
+import "./Repos.css";
 
 const Repos = () => {
   const [repos, setRepos] = useState([]);
@@ -26,10 +26,12 @@ const Repos = () => {
 
       {!loading && (
         <div>
-          <h1 className="repo-list__title">{repos[0].owner.login} Repositories:</h1>
+          <h1 className="repo-list__title">
+            {repos[0].owner.login} Repositories:
+          </h1>
           <ul className="repo-list">
             {repos.map((repo) => (
-              <RepoItem repo={repo} key={repo.id}/>
+              <RepoItem repo={repo} key={repo.id} />
             ))}
           </ul>
         </div>
