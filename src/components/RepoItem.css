@@ -3,11 +3,14 @@
     justify-content: space-between;
     height: 160px;
     background-color:  #E20813;
-    color: #f1eded;
-    text-shadow: 1px 1px black;
     margin-top: 1rem;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
+}
+
+.repo-list__item h3 {
+    color: #f1eded;
+    text-shadow: 1px 1px black;
 }
 
 .repo-list__item button {
@@ -29,8 +32,18 @@
     margin-bottom: 5px;
 }
 
-.repo-list__info small {
+.repo-list__info p {
     color: black;
     text-shadow: none;
-    display: block;
+    font-size: 14px;
+}
+
+
+.repo-list_info__stars i{
+    color: gold;
+    margin-right: 10px;
+}
+
+.repo-list_info__stars span {
+    font-size: 12px;
 }

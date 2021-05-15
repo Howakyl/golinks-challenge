@@ -1,3 +1,9 @@
+.loading {
+    color: #f1eded;
+    text-align: center;
+    margin-top: 5rem;
+}
+
 .repo-list__title {
     color: #f1eded;
     text-align: center;

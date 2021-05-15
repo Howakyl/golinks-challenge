@@ -5,7 +5,11 @@ const RepoItem = (props) => {
     <li className="repo-list__item">
       <div className="repo-list__info">
         <h3>{props.repo.name}</h3>
-        <small>{props.repo.description}</small>
+        <p>{props.repo.description}</p>
+        <div className="repo-list_info__stars">
+          <i class="fas fa-star"></i>
+          <span>{props.repo.stargazers_count}</span>
+        </div>
       </div>
       <button>+</button>
     </li>
