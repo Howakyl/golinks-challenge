@@ -1,0 +1,10 @@
+.repo-list__item {
+    display: flex;
+    justify-content: space-between;
+    background-color:  #E20813;
+    color: #f1eded;
+    text-shadow: 1px 1px black;
+    margin-top: 1rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import RepoItem from './RepoItem';
 import './Repos.css';
 
 const Repos = () => {
@@ -28,10 +29,7 @@ const Repos = () => {
           <h1 className="repo-list__title">{repos[0].owner.login} Repositories:</h1>
           <ul className="repo-list">
             {repos.map((repo) => (
-              <li key={repo.id} className="repo-list__item">
-                <h3>{repo.name}</h3>
-                <button>+</button>
-              </li>
+              <RepoItem repo={repo} key={repo.id}/>
             ))}
           </ul>
         </div>
