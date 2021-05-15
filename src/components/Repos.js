@@ -4,16 +4,6 @@ const Repos = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // async function getData() {
-  //   const res = await fetch("https://api.github.com/orgs/Netflix/repos", {
-  //     headers: {
-  //       authorization: process.env.REACT_APP_API_KEY,
-  //     },
-  //   });
-  //   const data = await res.json();
-  //   setRepos(data);
-  // }
-
   const getRepos = async () => {
     const res = await fetch("https://api.github.com/orgs/Netflix/repos", {
       headers: {
@@ -23,10 +13,10 @@ const Repos = () => {
     const data = await res.json();
     setRepos(data);
     setLoading(false);
-  }
+  };
   useEffect(() => {
     getRepos();
-  }, [repos]);
+  }, []);
 
   return (
     <div>
