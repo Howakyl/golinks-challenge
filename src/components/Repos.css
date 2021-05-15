@@ -7,22 +7,10 @@
 .repo-list {
     list-style: none;
     display: flex;
-    overflow: scroll;
-    height: 350px;
     flex-direction: column;
     text-align: center;
     width: 50vw;
     margin: 0 auto;
     padding: 0;
 
-}
-
-.repo-list__item button {
-    background: none;
-    border: none;
-    color: #f1eded;
-    text-shadow: 1px 1px black;
-    font-size: 40px;
-    font-weight: lighter;
-    cursor: pointer;
 }

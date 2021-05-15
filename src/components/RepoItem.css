@@ -1,10 +1,36 @@
 .repo-list__item {
     display: flex;
     justify-content: space-between;
+    height: 160px;
     background-color:  #E20813;
     color: #f1eded;
     text-shadow: 1px 1px black;
     margin-top: 1rem;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
+}
+
+.repo-list__item button {
+    background: none;
+    border: none;
+    color: #f1eded;
+    text-shadow: 1px 1px black;
+    font-size: 40px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.repo-list__info {
+    text-align: left;
+    max-width: 80%;
+}
+
+.repo-list__info h3 {
+    margin-bottom: 5px;
+}
+
+.repo-list__info small {
+    color: black;
+    text-shadow: none;
+    display: block;
 }

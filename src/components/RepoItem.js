@@ -2,10 +2,13 @@ import "./RepoItem.css";
 
 const RepoItem = (props) => {
   return (
-      <li className="repo-list__item">
+    <li className="repo-list__item">
+      <div className="repo-list__info">
         <h3>{props.repo.name}</h3>
-        <button>+</button>
-      </li>
+        <small>{props.repo.description}</small>
+      </div>
+      <button>+</button>
+    </li>
   );
 };
 
