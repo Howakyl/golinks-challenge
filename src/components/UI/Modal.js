@@ -1,7 +1,10 @@
+import Backdrop from './Backdrop';
 import "./Modal.css";
 
 const Modal = (props) => {
   return (
+    <> 
+    <Backdrop show={props.show} />
     <div
       className="modal"
       style={{
@@ -10,6 +13,7 @@ const Modal = (props) => {
     >
       {props.children}
     </div>
+    </>
   );
 };
 
