@@ -8,8 +8,8 @@ const RepoItem = (props) => {
 
   const modalHandler = (e) => {
     e.preventDefault();
-    setModalToggle(true);
-  }
+    setModalToggle(!modalToggle);
+  };
 
   return (
     <li className="repo-list__item">
@@ -20,8 +20,12 @@ const RepoItem = (props) => {
         </div>
         <RepoStats repo={props.repo} />
       </div>
-      <button onClick={modalHandler} type="button">+</button>
-      <Modal show={modalToggle}>here is some content</Modal>
+      <button onClick={modalHandler} type="button">
+        +
+      </button>
+      <Modal show={modalToggle} modalClosed={modalHandler}>
+        here is some content
+      </Modal>
     </li>
   );
 };
