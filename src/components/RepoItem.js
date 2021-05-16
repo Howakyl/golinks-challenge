@@ -9,7 +9,7 @@ const RepoItem = (props) => {
           <h3>{props.repo.name}</h3>
           <p>{props.repo.description}</p>
         </div>
-        <RepoStats repo={props.repo}/>
+        <RepoStats repo={props.repo} />
       </div>
       <button>+</button>
     </li>

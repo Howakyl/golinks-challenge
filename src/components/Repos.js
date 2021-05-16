@@ -20,6 +20,10 @@ const Repos = () => {
     getRepos();
   }, []);
 
+  const sortByStars = repos.sort((a, b) =>
+    a.stargazers_count > b.stargazers_count ? -1 : 1
+  );
+
   return (
     <div>
       {loading && <h2 className="loading">Loading...</h2>}
@@ -30,7 +34,7 @@ const Repos = () => {
             {repos[0].owner.login} Repositories:
           </h1>
           <ul className="repo-list">
-            {repos.map((repo) => (
+            {sortByStars.map((repo) => (
               <RepoItem repo={repo} key={repo.id} />
             ))}
           </ul>
