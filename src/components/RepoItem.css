@@ -1,8 +1,9 @@
+/* #E20813 */
 .repo-list__item {
     display: flex;
     justify-content: space-between;
     height: 160px;
-    background-color:  #E20813;
+    background-color:  #f1eded;
     margin-top: 1rem;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
@@ -17,15 +18,17 @@
 }
 
 .repo-list__item h3 {
-    color: #f1eded;
-    text-shadow: 1px 1px black;
+    color: #E20813;
+    font-size: 25px;
+    margin-top: 10px;
+    text-shadow: 1px 1px rgb(214, 211, 211);
 }
 
 .repo-list__item button {
     background: none;
     border: none;
-    color: #f1eded;
-    text-shadow: 1px 1px black;
+    color: #E20813;
+    text-shadow: 1px 1px rgb(155, 153, 153);
     font-size: 40px;
     font-weight: lighter;
     cursor: pointer;
@@ -33,7 +36,7 @@
 
 .repo-list__info {
     text-align: left;
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,33 +46,12 @@
     margin-bottom: 5px;
 }
 
-.repo-list_stats {
-    display: flex;
-    flex-direction: row;
-}
-
-.repo-list_stats div {
-    margin-right: 10px;
-}
-
 .repo-list__info p {
     color: rgb(26, 26, 26);
     text-shadow: none;
     font-size: 14px;
 }
 
-.repo-list__info span {
-    font-size: 12px;
-}
 
-.repo-list__info__stars i{
-    color: rgb(241, 214, 62);
-    margin-right: 10px;
-    text-shadow: -1px 1px 1px rgb(66, 66, 66), -1px 1px rgb(66, 66, 66);
-}
-
-.repo-list__info__forks i {
-    margin-right: 10px;
-}
 
 

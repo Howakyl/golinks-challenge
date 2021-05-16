@@ -1,0 +1,22 @@
+.repo-stats {
+    display: flex;
+    flex-direction: row;
+}
+
+.repo-stats div {
+    margin-right: 10px;
+}
+
+.repo-stats span {
+    font-size: 12px;
+}
+
+.repo-stats__stars i{
+    color: rgb(241, 214, 62);
+    margin-right: 10px;
+    text-shadow: -1px 1px 1px rgb(170, 168, 168), -1px 1px rgb(170, 168, 168);
+}
+
+.repo-stats__forks i {
+    margin-right: 10px;
+}
