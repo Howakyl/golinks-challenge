@@ -1,8 +1,7 @@
-import './App.css';
-import Repos from './components/Repos/Repos';
+import "./App.css";
+import Repos from "./components/Repos/Repos";
 
 function App() {
-
   return (
     <div>
       <Repos />
