@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import './Repos.css';
+import RepoItem from "./RepoItem";
+import "./Repos.css";
 
 const Repos = () => {
   const [repos, setRepos] = useState([]);
@@ -19,18 +20,25 @@ const Repos = () => {
     getRepos();
   }, []);
 
+  const sortByStars = repos.sort((a, b) =>
+    a.stargazers_count > b.stargazers_count ? -1 : 1
+  );
+
   return (
     <div>
-      {loading && <h2>Loading...</h2>}
+      {loading && <h2 className="loading">Loading...</h2>}
 
       {!loading && (
-        <ul className="repo-list">
-          {repos.map((repo) => (
-            <li key={repo.id} className="repo-list__item">
-              <h3>{repo.name}</h3>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h1 className="repo-list__title">
+            {repos[0].owner.login} Repositories:
+          </h1>
+          <ul className="repo-list">
+            {sortByStars.map((repo) => (
+              <RepoItem repo={repo} key={repo.id} />
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

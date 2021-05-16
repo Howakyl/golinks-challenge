@@ -1,0 +1,22 @@
+.loading {
+    color: #f1eded;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.repo-list__title {
+    color: #f1eded;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.repo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 0;
+
+}

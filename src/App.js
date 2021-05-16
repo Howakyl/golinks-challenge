@@ -1,5 +1,5 @@
 import './App.css';
-import Repos from './components/Repos';
+import Repos from './components/Repos/Repos';
 
 function App() {
 
