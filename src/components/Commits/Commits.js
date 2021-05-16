@@ -1,10 +1,10 @@
-
+import { useState, useEffect } from "react";
 const Commits = () => {
-  return (
-    <div>
-      test
-    </div>
-  )
-}
+  // useEffect(() => {
+
+  // },[])
+
+  return <div>test</div>;
+};
 
 export default Commits;

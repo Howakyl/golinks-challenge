@@ -25,7 +25,7 @@ const RepoItem = (props) => {
         +
       </button>
       <Modal show={modalToggle} close={modalHandler}>
-        <Commits />
+        <Commits repo={props.repo}/>
       </Modal>
     </li>
   );
