@@ -2,6 +2,7 @@ import "./RepoItem.css";
 import RepoStats from "./RepoStats";
 import Modal from "../UI/Modal";
 import { useState } from "react";
+import Commits from "../Commits/Commits";
 
 const RepoItem = (props) => {
   const [modalToggle, setModalToggle] = useState(false);
@@ -24,7 +25,7 @@ const RepoItem = (props) => {
         +
       </button>
       <Modal show={modalToggle} close={modalHandler}>
-        here is some content
+        <Commits />
       </Modal>
     </li>
   );
