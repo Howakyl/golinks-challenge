@@ -34,10 +34,22 @@
 .repo-list__info {
     text-align: left;
     max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .repo-list__info h3 {
     margin-bottom: 5px;
+}
+
+.repo-list_stats {
+    display: flex;
+    flex-direction: row;
+}
+
+.repo-list_stats div {
+    margin-right: 10px;
 }
 
 .repo-list__info p {
@@ -46,13 +58,18 @@
     font-size: 14px;
 }
 
+.repo-list__info span {
+    font-size: 12px;
+}
 
-.repo-list_info__stars i{
+.repo-list__info__stars i{
     color: rgb(241, 214, 62);
     margin-right: 10px;
     text-shadow: -1px 1px 1px rgb(66, 66, 66), -1px 1px rgb(66, 66, 66);
 }
 
-.repo-list_info__stars span {
-    font-size: 12px;
+.repo-list__info__forks i {
+    margin-right: 10px;
 }
+
+
