@@ -23,7 +23,7 @@ const RepoItem = (props) => {
       <button onClick={modalHandler} type="button">
         +
       </button>
-      <Modal show={modalToggle} modalClosed={modalHandler}>
+      <Modal show={modalToggle} close={modalHandler}>
         here is some content
       </Modal>
     </li>
