@@ -16,7 +16,9 @@ const RepoItem = (props) => {
     <li className="repo-list__item">
       <div className="repo-list__info">
         <div>
+        <a href={props.repo.html_url} target="_blank" rel="noreferrer" className="repo-list__link">
           <h3>{props.repo.name}</h3>
+        </a>
           <p>{props.repo.description}</p>
         </div>
         <RepoStats repo={props.repo} />

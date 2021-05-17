@@ -24,6 +24,10 @@
     text-shadow: 1px 1px rgb(214, 211, 211);
 }
 
+.repo-list__link {
+    text-decoration: none;
+}
+
 .repo-list__button {
     background: none;
     border: none;
