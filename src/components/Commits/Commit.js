@@ -3,7 +3,7 @@ import classes from "./Commit.module.css";
 const Commit = (props) => {
   return (
     <div className={classes.container}>
-      <figure>
+      <div>
         {props.commit.author ? (
           <img
             src={props.commit.author.avatar_url}
@@ -17,7 +17,7 @@ const Commit = (props) => {
             className={classes.avatar}
           />
         )}
-      </figure>
+      </div>
 
       <div>
         {props.commit.author != null ? (
