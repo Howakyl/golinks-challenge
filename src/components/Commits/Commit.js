@@ -3,11 +3,12 @@ import classes from "./Commit.module.css";
 const Commit = (props) => {
   return (
     <div className={classes.container}>
-      <div>
+      <h4 className={classes.title}>{props.commit.commit.message}</h4>
+      <div className={classes.userContainer}>
         {props.commit.author ? (
           <img
             src={props.commit.author.avatar_url}
-            alt=""
+            alt="user avatar"
             className={classes.avatar}
           />
         ) : (
@@ -17,14 +18,13 @@ const Commit = (props) => {
             className={classes.avatar}
           />
         )}
-      </div>
-
-      <div>
-        {props.commit.author != null ? (
-          <p>{props.commit.author.login}</p>
-        ) : (
-          <p>{props.commit.commit.author.name}</p>
-        )}
+        <div>
+          {props.commit.author != null ? (
+            <p>{props.commit.author.login}</p>
+          ) : (
+            <p>{props.commit.commit.author.name}</p>
+          )}
+        </div>
       </div>
     </div>
   );

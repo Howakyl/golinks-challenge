@@ -1,11 +1,19 @@
 .container {
     height: 200px;
-    display: flex;
     margin: 10px;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .avatar {
     width: 50px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 12px;
+}
+
+.title {
+    font-weight: 500;
 }
