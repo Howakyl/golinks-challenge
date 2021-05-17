@@ -4,6 +4,9 @@
     border: 1px solid grey;
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .infoContainer {
