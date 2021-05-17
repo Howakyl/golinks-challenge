@@ -21,7 +21,7 @@ const RepoItem = (props) => {
         </div>
         <RepoStats repo={props.repo} />
       </div>
-      <button onClick={modalHandler} type="button">
+      <button onClick={modalHandler} type="button" className="repo-list__button">
         +
       </button>
       <Modal show={modalToggle} close={modalHandler}>
