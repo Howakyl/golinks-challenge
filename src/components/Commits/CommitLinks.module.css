@@ -4,18 +4,19 @@
     display: inline-block;
 }
 
-.container button {
+.container a {
+    color: inherit;
+}
+
+.hash {
     border: none;
-    background: transparent;
+    background: #e20813;
+    color: white;
     padding: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #E20813;
-    color: white;
-}
-
-.code {
-    border-right: 1px solid rgb(129, 129, 129) !important;
+.hash:hover {
+    background: transparent;
+    color: inherit;
 }

@@ -1,14 +1,13 @@
 import classes from "./CommitLinks.module.css";
 
 const CommitLinks = (props) => {
-  
-    const trimmedHash = props.commit.sha.slice(0, 7);
-
+  const trimmedHash = props.commit.sha.slice(0, 7);
 
   return (
     <div className={classes.container}>
-      <button className={classes.code}><i className="fas fa-code"></i></button>
-      <button className={classes.hash}>{trimmedHash}</button>
+      <a href={props.commit.html_url} target="_blank" rel="noreferrer">
+        <button className={classes.hash}>{trimmedHash}</button>
+      </a>
     </div>
   );
 };
