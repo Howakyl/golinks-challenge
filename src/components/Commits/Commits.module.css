@@ -1,3 +1,4 @@
-/* .commits {
-    
-} */
+.commits-container {
+    display: flex;
+    flex-direction: column;
+}

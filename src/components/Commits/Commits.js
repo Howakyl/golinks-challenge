@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Commit from './Commit';
 import classes from "./Commits.module.css";
 
 const Commits = (props) => {
@@ -20,22 +21,16 @@ const Commits = (props) => {
 
   useEffect(() => {
     getCommits();
-  }, []);
+  });
 
   return (
     <div>
       {loading && <h2>Loading...</h2>}
 
       {!loading && (
-        <div className={classes.commits}>
+        <div className={classes['commits-container']}>
           {commits.map((commit) => (
-            <div key={commit.sha}>
-              {commit.author != null ? (
-                <p>{commit.author.login}</p>
-              ) : (
-                <p>{commit.commit.author.name}</p>
-              )}
-            </div>
+            <Commit commit={commit}  key={commit.sha}/>
           ))}
         </div>
       )}
