@@ -20,3 +20,8 @@
     background: transparent;
     color: inherit;
 }
+
+.date {
+    font-size: 12px;
+    margin-right: 5px;
+}
