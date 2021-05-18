@@ -1,12 +1,12 @@
 import Backdrop from "./Backdrop";
-import "./Modal.css";
+import classes from "./Modal.module.css";
 
 const Modal = (props) => {
   return (
     <>
       <Backdrop show={props.show} clicked={props.close} />
       <div
-        className="modal"
+        className={classes.modal}
         style={{
           transform: props.show ? "translateY(0)" : "translateY(-100vh)",
           opacity: props.show ? 1 : 0,
