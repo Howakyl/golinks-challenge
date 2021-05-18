@@ -10,7 +10,9 @@ const OrgInfo = (props) => {
           className={classes.avatar}
         />
       </a>
-      <h1 className={classes.orgTitle}>{props.org.owner.login} Repositories:</h1>
+      <h1 className={classes.orgTitle}>
+        {props.org.owner.login} Repositories:
+      </h1>
     </div>
   );
 };
