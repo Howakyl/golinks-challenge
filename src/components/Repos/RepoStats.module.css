@@ -1,23 +1,23 @@
-.repo-stats {
+.statsContainer {
     display: flex;
     flex-direction: row;
 }
 
-.repo-stats div {
+.statsContainer div {
     margin-right: 10px;
 }
 
-.repo-stats span {
+.statsContainer span {
     font-size: 12px;
 }
 
-.repo-stats__stars i{
+.stars i{
     color: rgb(241, 214, 62);
     margin-right: 10px;
     text-shadow: -1px 1px 1px rgb(170, 168, 168), -1px 1px rgb(170, 168, 168);
 }
 
-.repo-stats__forks i {
+.forks i {
     margin-right: 10px;
     color: rgb(75, 75, 74)
 }

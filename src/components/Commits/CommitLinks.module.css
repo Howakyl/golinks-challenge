@@ -1,0 +1,28 @@
+.container {
+    display: inline-block;
+}
+
+.container a {
+    color: inherit;
+}
+
+.hash {
+    border: 1px solid #e20813;
+    background: #e20813;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hash:hover {
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgb(155, 153, 153);
+}
+
+.date {
+    font-size: 12px;
+    margin-right: 5px;
+}
