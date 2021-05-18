@@ -1,5 +1,4 @@
-/* #E20813 */
-.repo-list__item {
+.repoItem {
     display: flex;
     justify-content: space-between;
     height: 160px;
@@ -17,18 +16,18 @@
     ;
 }
 
-.repo-list__item h3 {
+.repoItem h3 {
     color: #E20813;
     font-size: 25px;
     margin-top: 10px;
     text-shadow: 1px 1px rgb(214, 211, 211);
 }
 
-.repo-list__link {
+.repoItemLink {
     text-decoration: none;
 }
 
-.repo-list__button {
+.repoItemButton {
     background: none;
     border: none;
     color: #E20813;
@@ -38,7 +37,7 @@
     cursor: pointer;
 }
 
-.repo-list__info {
+.repoInfo {
     text-align: left;
     max-width: 90%;
     display: flex;
@@ -46,11 +45,11 @@
     justify-content: space-between;
 }
 
-.repo-list__info h3 {
+.repoInfo h3 {
     margin-bottom: 5px;
 }
 
-.repo-list__info p {
+.repoInfo p {
     color: rgb(26, 26, 26);
     text-shadow: none;
     font-size: 14px;

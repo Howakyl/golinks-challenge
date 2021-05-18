@@ -1,4 +1,4 @@
-import "./RepoItem.css";
+import classes from "./RepoItem.module.css";
 import RepoStats from "./RepoStats";
 import Modal from "../UI/Modal";
 import { useState } from "react";
@@ -13,17 +13,17 @@ const RepoItem = (props) => {
   };
 
   return (
-    <li className="repo-list__item">
-      <div className="repo-list__info">
+    <li className={classes.repoItem}>
+      <div className={classes.repoInfo}>
         <div>
-        <a href={props.repo.html_url} target="_blank" rel="noreferrer" className="repo-list__link">
+        <a href={props.repo.html_url} target="_blank" rel="noreferrer" className={classes.repoItemLink}>
           <h3>{props.repo.name}</h3>
         </a>
           <p>{props.repo.description}</p>
         </div>
         <RepoStats repo={props.repo} />
       </div>
-      <button onClick={modalHandler} type="button" className="repo-list__button">
+      <button onClick={modalHandler} type="button" className={classes.repoItemButton}>
         +
       </button>
       <Modal show={modalToggle} close={modalHandler}>
