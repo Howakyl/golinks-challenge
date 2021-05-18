@@ -25,7 +25,7 @@ const Repos = () => {
   );
 
   return (
-    <div>
+    <div className={classes.container}>
       {loading && <h2 className={classes.loading}>Loading...</h2>}
 
       {!loading && (

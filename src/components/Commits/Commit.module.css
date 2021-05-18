@@ -9,6 +9,10 @@
     justify-content: space-between;
 }
 
+.container:hover {
+    background-color: rgb(240, 235, 235);
+}
+
 .infoContainer {
     display: flex;
     justify-content: space-between;
@@ -34,4 +38,10 @@
     font-weight: 500;
     text-align: left;
     margin-bottom: 0px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        height: 250px;
+    }
 }
