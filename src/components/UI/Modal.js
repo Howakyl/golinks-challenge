@@ -12,7 +12,7 @@ const Modal = (props) => {
           opacity: props.show ? 1 : 0,
         }}
       >
-      <i className={`fas fa-times ${classes.exit}`} onClick={props.close}></i>
+        <i className={`fas fa-times ${classes.exit}`} onClick={props.close}></i>
         {props.children}
       </div>
     </>
