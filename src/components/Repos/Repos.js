@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import OrgInfo from "../Orgs/OrgInfo";
 import RepoItem from "./RepoItem";
 import classes from "./Repos.module.css";
 
@@ -41,18 +42,7 @@ const Repos = (props) => {
 
       {!loading && props.organization.message !== "Not Found" && (
         <div>
-          <div className={classes.orgInfo}>
-            <a href={repos[0].owner.html_url} target="_blank" rel="noreferrer">
-              <img
-                src={repos[0].owner.avatar_url}
-                alt=""
-                className={classes.avatar}
-              />
-            </a>
-            <h1 className={classes.orgTitle}>
-              {repos[0].owner.login} Repositories:
-            </h1>
-          </div>
+          <OrgInfo org={repos[0]} />
           <ul className={classes.repoList}>
             {sortByStars.map((repo) => (
               <RepoItem repo={repo} key={repo.id} />
