@@ -15,7 +15,7 @@
 
 .exit {
     position: relative;
-    left: 48%;
+    right: 48%;
     cursor: pointer;
 }
 
