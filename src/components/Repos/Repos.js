@@ -30,12 +30,18 @@ const Repos = () => {
 
       {!loading && (
         <div>
-        <div className={classes.orgInfo}>
-          <img src={repos[0].owner.avatar_url} alt="" className={classes.avatar} />
-          <h1 className={classes.orgTitle}>
-            {repos[0].owner.login} Repositories:
-          </h1>
-        </div>
+          <div className={classes.orgInfo}>
+            <a href={repos[0].owner.html_url} target="_blank" rel="noreferrer">
+              <img
+                src={repos[0].owner.avatar_url}
+                alt=""
+                className={classes.avatar}
+              />
+            </a>
+            <h1 className={classes.orgTitle}>
+              {repos[0].owner.login} Repositories:
+            </h1>
+          </div>
           <ul className={classes.repoList}>
             {sortByStars.map((repo) => (
               <RepoItem repo={repo} key={repo.id} />
