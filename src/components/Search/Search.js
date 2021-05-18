@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Search.module.css";
 
 const Search = (props) => {
@@ -7,6 +7,8 @@ const Search = (props) => {
   const handleChange = (e) => {
     setSearchInput(e.target.value);
   };
+
+  const abortController = new AbortController();
 
   const handleClick = async () => {
     if (searchInput.length > 0) {
@@ -17,6 +19,7 @@ const Search = (props) => {
             headers: {
               'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
             },
+            signal: abortController.signal,
           }
         );
         const data = await result.json();
@@ -26,6 +29,13 @@ const Search = (props) => {
       }
     }
   };
+
+  useEffect(() => {
+    return () => {
+      abortController.abort();
+    };
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className={classes.searchContainer}>

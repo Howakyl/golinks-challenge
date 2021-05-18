@@ -7,25 +7,32 @@ const Repos = (props) => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getRepos = async () => {
-    setLoading(true);
-
-    try {
-      const res = await fetch(props.organization.repos_url, {
-        headers: {
-          'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
-        },
-      });
-      const data = await res.json();
-      setRepos(data);
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
-    }
-  };
   useEffect(() => {
+    const abortController = new AbortController();
+
+    const getRepos = async () => {
+      setLoading(true);
+
+      try {
+        const res = await fetch(props.organization.repos_url, {
+          headers: {
+            'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
+          },
+          signal: abortController.signal,
+        });
+        const data = await res.json();
+        setRepos(data);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
+    };
     getRepos();
+
+    return () => {
+      abortController.abort();
+    };
     // eslint-disable-next-line
   }, [props.organization.repos_url]);
 

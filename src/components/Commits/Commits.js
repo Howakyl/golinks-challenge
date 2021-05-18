@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Commit from "./Commit";
 import classes from "./Commits.module.css";
 
@@ -8,20 +8,29 @@ const Commits = (props) => {
 
   const trimmedCommitUrl = props.repo.commits_url.replace("{/sha}", "").trim();
 
-  const getCommits = useCallback(async () => {
-    const res = await fetch(trimmedCommitUrl, {
-      headers: {
-        'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
-      },
-    });
-    const commitData = await res.json();
-    setCommits(commitData);
-    setLoading(false);
-  }, [trimmedCommitUrl]);
+  
 
   useEffect(() => {
+    const abortController = new AbortController();
+
+    const getCommits = async () => {
+  
+      const res = await fetch(trimmedCommitUrl, {
+        headers: {
+          'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
+        },
+        signal: abortController.signal,
+      });
+      const commitData = await res.json();
+      setCommits(commitData);
+      setLoading(false);
+    };
     getCommits();
-  }, [getCommits]);
+
+    return () => {
+      abortController.abort();
+    }
+  }, [trimmedCommitUrl]);
 
   return (
     <div>
