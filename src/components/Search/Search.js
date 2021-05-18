@@ -1,9 +1,9 @@
 import { useState } from "react";
 import classes from "./Search.module.css";
 
-const Search = () => {
+const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
-  const [org, setOrg] = useState({});
+  // const [org, setOrg] = useState({});
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -19,13 +19,14 @@ const Search = () => {
         }
       });
       const data = await result.json();
-      setOrg(data);
+      // setOrg(data);
+      props.onGetOrg(data);
     } catch (err) {
       console.log(err);
     }
   };
 
-  console.log('ORG: ', org)
+  // console.log('ORG: ', org)
   return (
     <div className={classes.searchContainer}>
       <input

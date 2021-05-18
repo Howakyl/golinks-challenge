@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import RepoItem from "./RepoItem";
 import classes from "./Repos.module.css";
 
-const Repos = () => {
+const Repos = (props) => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const getRepos = async () => {
-    const res = await fetch("https://api.github.com/orgs/Netflix/repos", {
+    setLoading(true);
+    const res = await fetch(props.organization.repos_url, {
       headers: {
         authorization: process.env.REACT_APP_API_KEY,
       },
@@ -18,7 +19,7 @@ const Repos = () => {
   };
   useEffect(() => {
     getRepos();
-  }, []);
+  }, [props.organization.repos_url]);
 
   const sortByStars = repos.sort((a, b) =>
     a.stargazers_count > b.stargazers_count ? -1 : 1
