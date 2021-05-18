@@ -29,6 +29,7 @@ const Commits = (props) => {
 
       {!loading && (
         <div className={classes["commits-container"]}>
+          <h3>{props.repo.name} commits:</h3>
           {commits.map((commit) => (
             <Commit commit={commit} key={commit.sha} />
           ))}
