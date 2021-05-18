@@ -4,12 +4,14 @@
     margin-top: 10rem;
     height: 40px;
     border-radius: 5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .searchInput {
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .searchInput:focus {
@@ -23,4 +25,6 @@
     color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }

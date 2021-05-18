@@ -9,12 +9,11 @@ const Search = (props) => {
   };
 
   const handleClick = async () => {
-
     try {
       const result = await fetch(`https://api.github.com/orgs/${searchInput}`, {
         headers: {
-          'Authorization': `token ${process.env.REACT_APP_API_KEY}`
-        }
+          'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
+        },
       });
       const data = await result.json();
       props.onGetOrg(data);
