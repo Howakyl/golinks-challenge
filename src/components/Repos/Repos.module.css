@@ -4,13 +4,13 @@
     margin-top: 5rem;
 }
 
-.repo-list__title {
+.orgTitle {
     color: #f1eded;
     text-align: center;
     margin-top: 10rem;
 }
 
-.repo-list {
+.repoList {
     list-style: none;
     display: flex;
     flex-direction: column;

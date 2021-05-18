@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import RepoItem from "./RepoItem";
-import "./Repos.css";
+import classes from "./Repos.module.css";
 
 const Repos = () => {
   const [repos, setRepos] = useState([]);
@@ -26,14 +26,14 @@ const Repos = () => {
 
   return (
     <div>
-      {loading && <h2 className="loading">Loading...</h2>}
+      {loading && <h2 className={classes.loading}>Loading...</h2>}
 
       {!loading && (
         <div>
-          <h1 className="repo-list__title">
+          <h1 className={classes.orgTitle}>
             {repos[0].owner.login} Repositories:
           </h1>
-          <ul className="repo-list">
+          <ul className={classes.repoList}>
             {sortByStars.map((repo) => (
               <RepoItem repo={repo} key={repo.id} />
             ))}
