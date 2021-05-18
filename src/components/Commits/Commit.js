@@ -2,9 +2,12 @@ import classes from "./Commit.module.css";
 import CommitLinks from "./CommitLinks";
 
 const Commit = (props) => {
+  const title = props.commit.commit.message;
+  const trimTitle = title.length > 150 ? title.slice(0,150) + '...' : title;
+
   return (
     <div className={classes.container}>
-      <h4 className={classes.title}>{props.commit.commit.message}</h4>
+      <h4 className={classes.title}>{trimTitle}</h4>
       <div className={classes.infoContainer}>
         <div className={classes.userContainer}>
           {props.commit.author ? (
