@@ -55,6 +55,14 @@
     font-size: 14px;
 }
 
+@media (max-width: 1300px) {
+    .repoItem {
+        height: 220px;
+    }
+}
 
-
-
+@media (max-width: 650px) {
+    .repoItem {
+        height: 300px;
+    }
+}

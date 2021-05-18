@@ -20,3 +20,9 @@
     padding: 0;
 
 }
+
+@media (max-width: 650px) {
+    .repoList {
+        width: 70vw;
+    }
+}
