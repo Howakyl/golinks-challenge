@@ -11,7 +11,7 @@ const Commits = (props) => {
   const getCommits = useCallback(async () => {
     const res = await fetch(trimmedCommitUrl, {
       headers: {
-        authorization: process.env.REACT_APP_API_KEY,
+        'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
       },
     });
     const commitData = await res.json();

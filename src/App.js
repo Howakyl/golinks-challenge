@@ -10,20 +10,13 @@ function App() {
   const getOrg = (org) => {
     setOrganization(org);
     setLoading(false);
-  }
+  };
 
-  console.log( 'IN APP.js', organization)
   return (
     <div>
-      <Search onGetOrg={getOrg}/>
-      {loading && (
-        <h2>Search for an organization!</h2>
-      )}
-      {!loading && (
-
-      <Repos organization={organization}/>
-      )}
-      
+      <Search onGetOrg={getOrg} />
+      {loading && <h2 className="default">Search for a GitHub organization!</h2>}
+      {!loading && <Repos organization={organization} />}
     </div>
   );
 }

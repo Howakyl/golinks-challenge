@@ -12,7 +12,7 @@ const Repos = (props) => {
     try {
       const res = await fetch(props.organization.repos_url, {
         headers: {
-          authorization: process.env.REACT_APP_API_KEY,
+          'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
         },
       });
       const data = await res.json();
@@ -25,6 +25,7 @@ const Repos = (props) => {
   };
   useEffect(() => {
     getRepos();
+    // eslint-disable-next-line
   }, [props.organization.repos_url]);
 
   const sortByStars = repos.sort((a, b) =>
