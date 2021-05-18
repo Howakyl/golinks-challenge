@@ -8,14 +8,20 @@ const Repos = (props) => {
 
   const getRepos = async () => {
     setLoading(true);
-    const res = await fetch(props.organization.repos_url, {
-      headers: {
-        authorization: process.env.REACT_APP_API_KEY,
-      },
-    });
-    const data = await res.json();
-    setRepos(data);
-    setLoading(false);
+
+    try {
+      const res = await fetch(props.organization.repos_url, {
+        headers: {
+          authorization: process.env.REACT_APP_API_KEY,
+        },
+      });
+      const data = await res.json();
+      setRepos(data);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
   };
   useEffect(() => {
     getRepos();
@@ -27,9 +33,12 @@ const Repos = (props) => {
 
   return (
     <div className={classes.container}>
+      {props.organization.message === "Not Found" && (
+        <h2 className={classes.loading}>Organization Not Found :(</h2>
+      )}
       {loading && <h2 className={classes.loading}>Loading...</h2>}
 
-      {!loading && (
+      {!loading && props.organization.message !== "Not Found" && (
         <div>
           <div className={classes.orgInfo}>
             <a href={repos[0].owner.html_url} target="_blank" rel="noreferrer">

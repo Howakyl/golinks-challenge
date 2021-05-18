@@ -3,7 +3,6 @@ import classes from "./Search.module.css";
 
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
-  // const [org, setOrg] = useState({});
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -19,14 +18,12 @@ const Search = (props) => {
         }
       });
       const data = await result.json();
-      // setOrg(data);
       props.onGetOrg(data);
     } catch (err) {
       console.log(err);
     }
   };
 
-  // console.log('ORG: ', org)
   return (
     <div className={classes.searchContainer}>
       <input
