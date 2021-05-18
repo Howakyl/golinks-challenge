@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import OrgInfo from "../Orgs/OrgInfo";
 import RepoItem from "./RepoItem";
 import classes from "./Repos.module.css";
 
@@ -6,25 +7,32 @@ const Repos = (props) => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getRepos = async () => {
-    setLoading(true);
-
-    try {
-      const res = await fetch(props.organization.repos_url, {
-        headers: {
-          'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
-        },
-      });
-      const data = await res.json();
-      setRepos(data);
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
-    }
-  };
   useEffect(() => {
+    const abortController = new AbortController();
+
+    const getRepos = async () => {
+      setLoading(true);
+
+      try {
+        const res = await fetch(props.organization.repos_url, {
+          headers: {
+            'Authorization': `token ${process.env.REACT_APP_API_KEY}`,
+          },
+          signal: abortController.signal,
+        });
+        const data = await res.json();
+        setRepos(data);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
+    };
     getRepos();
+
+    return () => {
+      abortController.abort();
+    };
     // eslint-disable-next-line
   }, [props.organization.repos_url]);
 
@@ -41,18 +49,7 @@ const Repos = (props) => {
 
       {!loading && props.organization.message !== "Not Found" && (
         <div>
-          <div className={classes.orgInfo}>
-            <a href={repos[0].owner.html_url} target="_blank" rel="noreferrer">
-              <img
-                src={repos[0].owner.avatar_url}
-                alt=""
-                className={classes.avatar}
-              />
-            </a>
-            <h1 className={classes.orgTitle}>
-              {repos[0].owner.login} Repositories:
-            </h1>
-          </div>
+          <OrgInfo org={repos[0]} />
           <ul className={classes.repoList}>
             {sortByStars.map((repo) => (
               <RepoItem repo={repo} key={repo.id} />

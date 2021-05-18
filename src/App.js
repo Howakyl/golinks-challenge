@@ -15,7 +15,9 @@ function App() {
   return (
     <div>
       <Search onGetOrg={getOrg} />
-      {loading && <h2 className="default">Search for a GitHub organization!</h2>}
+      {loading && (
+        <h2 className="default">Search for a GitHub organization!</h2>
+      )}
       {!loading && <Repos organization={organization} />}
     </div>
   );

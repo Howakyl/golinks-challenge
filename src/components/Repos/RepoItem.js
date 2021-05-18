@@ -16,18 +16,27 @@ const RepoItem = (props) => {
     <li className={classes.repoItem}>
       <div className={classes.repoInfo}>
         <div>
-        <a href={props.repo.html_url} target="_blank" rel="noreferrer" className={classes.repoItemLink}>
-          <h3>{props.repo.name}</h3>
-        </a>
+          <a
+            href={props.repo.html_url}
+            target="_blank"
+            rel="noreferrer"
+            className={classes.repoItemLink}
+          >
+            <h3>{props.repo.name}</h3>
+          </a>
           <p>{props.repo.description}</p>
         </div>
         <RepoStats repo={props.repo} />
       </div>
-      <button onClick={modalHandler} type="button" className={classes.repoItemButton}>
+      <button
+        onClick={modalHandler}
+        type="button"
+        className={classes.repoItemButton}
+      >
         +
       </button>
       <Modal show={modalToggle} close={modalHandler}>
-        <Commits repo={props.repo}/>
+        <Commits repo={props.repo} />
       </Modal>
     </li>
   );

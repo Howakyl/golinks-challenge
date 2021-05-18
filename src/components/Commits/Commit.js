@@ -3,7 +3,7 @@ import CommitLinks from "./CommitLinks";
 
 const Commit = (props) => {
   const title = props.commit.commit.message;
-  const trimTitle = title.length > 150 ? title.slice(0,150) + '...' : title;
+  const trimTitle = title.length > 150 ? title.slice(0, 150) + "..." : title;
 
   return (
     <div className={classes.container}>

@@ -2,7 +2,7 @@ import classes from "./RepoStats.module.css";
 
 const RepoStats = (props) => {
   const date = new Date(props.repo.created_at);
-  const day = date.toLocaleString("en-US", { month: "short", day: "2-digit" })
+  const day = date.toLocaleString("en-US", { month: "short", day: "2-digit" });
   const year = date.getFullYear();
 
   return (
@@ -19,7 +19,9 @@ const RepoStats = (props) => {
         <span>{props.repo.forks_count}</span>
       </div>
       <div>
-        <span>Created At: {day}, {year}</span>
+        <span>
+          Created On: {day}, {year}
+        </span>
       </div>
     </section>
   );
