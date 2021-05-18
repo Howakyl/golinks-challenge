@@ -13,7 +13,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className={classes.searchContainer}>
       <input type="text" placeholder="search orgs:" onChange={handleChange}  className={classes.searchInput}/>
       <button onClick={handleClick} className={classes.searchButton}>Search</button>
     </div>

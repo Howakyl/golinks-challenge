@@ -1,0 +1,26 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.searchInput {
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.searchInput:focus {
+    outline-width: 0;
+}
+
+.searchButton {
+    cursor: pointer;
+    border: none;
+    background-color: #E20813;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
