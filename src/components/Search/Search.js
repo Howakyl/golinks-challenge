@@ -12,7 +12,7 @@ const Search = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (searchInput.length > 0) {
+    if (searchInput.trim().length > 0) {
       try {
         const result = await fetch(
           `https://api.github.com/orgs/${searchInput}`,
