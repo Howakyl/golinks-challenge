@@ -10,7 +10,8 @@ const Search = (props) => {
 
   const abortController = new AbortController();
 
-  const handleClick = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (searchInput.length > 0) {
       try {
         const result = await fetch(
@@ -39,15 +40,17 @@ const Search = (props) => {
 
   return (
     <div className={classes.searchContainer}>
-      <input
-        type="text"
-        placeholder="search orgs:"
-        onChange={handleChange}
-        className={classes.searchInput}
-      />
-      <button onClick={handleClick} className={classes.searchButton}>
-        Search
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="search orgs:"
+          onChange={handleChange}
+          className={classes.searchInput}
+        />
+        <button className={classes.searchButton} type="submit">
+          Search
+        </button>
+      </form>
     </div>
   );
 };

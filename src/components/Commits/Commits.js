@@ -8,8 +8,6 @@ const Commits = (props) => {
 
   const trimmedCommitUrl = props.repo.commits_url.replace("{/sha}", "").trim();
 
-  
-
   useEffect(() => {
     const abortController = new AbortController();
 

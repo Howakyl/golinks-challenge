@@ -7,8 +7,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+.searchContainer form {
+    height: 35px;
+}
+
 .searchInput {
     border: none;
+    height: 100%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     font-family: 'Inter', sans-serif;
@@ -23,6 +28,8 @@
     border: none;
     background-color: #E20813;
     color: white;
+    height: 100%;
+    /* padding-bottom: 1px; */
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     font-family: 'Inter', sans-serif;
