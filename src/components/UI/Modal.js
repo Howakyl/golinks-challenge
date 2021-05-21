@@ -9,7 +9,7 @@ const Modal = (props) => {
         className={classes.modal}
         style={{
           transform: props.show ? "translateY(0)" : "translateY(-100vh)",
-          opacity: props.show ? 1 : 0,
+          visibility: props.show ? "initial" : "hidden",
         }}
       >
         <i className={`fas fa-times ${classes.exit}`} onClick={props.close}></i>
