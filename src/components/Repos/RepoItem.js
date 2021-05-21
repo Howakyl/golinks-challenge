@@ -12,10 +12,14 @@ const RepoItem = (props) => {
     setModalToggle(!modalToggle);
   };
 
-  const trimmedDescription =
-    props.repo.description.length > 100
-      ? props.repo.description.slice(0, 200) + "..."
-      : props.repo.description;
+  function trimRepoDescription (repoDesc) {
+    if (repoDesc) {
+      if (repoDesc.length >= 200) {
+        return repoDesc.slice(0,200) + '...'
+      }
+    }
+    return repoDesc;
+  }
 
   return (
     <li className={classes.repoItem}>
@@ -29,7 +33,9 @@ const RepoItem = (props) => {
           >
             <h3>{props.repo.name}</h3>
           </a>
-          <p>{trimmedDescription}</p>
+          <p>
+            {trimRepoDescription(props.repo.description)}
+          </p>
         </div>
         <RepoStats repo={props.repo} />
       </div>
